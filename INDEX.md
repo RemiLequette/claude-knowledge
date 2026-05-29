@@ -53,3 +53,8 @@ Setup and configuration guides for new projects.
 | Claude.ai-best-practices.md | 15 design principles for Claude project structure: minimalism, separation of concerns, no circular references, imperative rules, conventions, file paths, linear structure, documentation, audit section, README, keywords, quick-start structure. | best-practices, structure, instructions, conventions, clarity, context, design-principles |
 | audit-process.md | Process to verify project conformance to best practices. Rules of engagement: session dedication, corrections, guide updates, re-audit separation. Structured findings, proposals, approval workflow. Includes checkpoint + batching workflow. | audit, verification, best-practices, compliance, quality-assurance, process, methodology |
 | guide-maintenance.md | Standards for maintaining all guides: update Table of Contents and Changelog with every modification. Required for all guides (project-setup, best-practices, audit-process). | maintenance, guides, documentation, changelog, discoverability, traceability, standards |
+
+---
+
+## Keywords
+index, conventions, workflows, guides, navigation, discoverability, knowledge-base

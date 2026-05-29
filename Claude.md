@@ -67,3 +67,8 @@ C:\Users\RemiLequette\Development\projects\claude-knowledge\workflows\session-st
 The knowledge base loads automatically from there.
 
 **That's it.** No other setup needed.
+
+---
+
+## Keywords
+claude, instructions, session, knowledge-base, setup, configuration
