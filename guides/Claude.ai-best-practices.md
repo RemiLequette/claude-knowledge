@@ -61,18 +61,29 @@ Guidelines for structuring Claude projects to ensure consistency, clarity, and m
 
 **Principle:** Keep Claude Project instructions minimal. Details belong in Claude.md.
 
-### Claude Project Instructions (in UI)
-Should be 2-3 lines max:
+### Claude Project Instructions
+Should follow this standard template:
 ```
-Your project folder is: C:\Users\RemiLequette\Development\projects\[PROJECT_NAME]
+Project name: [PROJECT-NAME]
 
-Read Claude.md at the root of your project folder first.
+Project folder: C:\Users\RemiLequette\Development\projects\[PROJECT-NAME]
+
+1. Use the `filesystem` MCP tool to read INDEX.md at:
+   C:\Users\RemiLequette\Development\projects\claude-knowledge\INDEX.md
+2. Use the `filesystem` MCP tool to read Claude.md at the root of the project folder.
+
+WHY: filesystem MCP reads from your local machine, not Claude's Linux container.
+INDEX.md loads shared conventions. Claude.md loads project-specific setup.
 ```
+
+**Note:** `claude-knowledge` itself skips step 1 — it IS the knowledge base.
 
 ### Why
 - Easier to read and update
 - Clear entry point (Claude.md)
 - Not cluttered with implementation details
+- `filesystem` MCP specified explicitly to avoid Claude reading from its Linux container
+- Shared conventions (INDEX.md) loaded first, before any project-specific setup
 
 ### Anti-Pattern ❌
 ```
@@ -368,30 +379,17 @@ The project name must be:
 
 ### Template for Setup Process
 
-When creating a new Claude project, use this template for instructions:
+When creating a new Claude project, use the standard template from **BP#1** for instructions.
 
-```
-Project name: [PROJECT-NAME]
+→ See [BP#1 — Instruction Minimalism](#1-instruction-minimalism) for the canonical template.
 
-Your project folder is: C:\Users\RemiLequette\Development\projects\[PROJECT-NAME]
-
-Read Claude.md at the root of your project folder first.
-```
-
-**Replace `[PROJECT-NAME]`** with the actual project name (e.g., `my-data-pipeline`, `report-generator`)..
+**Replace `[PROJECT-NAME]`** with the actual project name (e.g., `my-data-pipeline`, `report-generator`).
 
 ### Correct Pattern ✅
 
 **Example: Project named "my-data-pipeline"**
 
-In Claude Desktop project settings:
-```
-Project name: my-data-pipeline
-
-Your project folder is: C:\Users\RemiLequette\Development\projects\my-data-pipeline
-
-Read Claude.md at the root of your project folder first.
-```
+In Claude Desktop project settings: use the BP#1 template with `my-data-pipeline` substituted.
 
 Then in `Claude.md`, `PROJECT.md`, and `README.md`, reference the same name:
 - `# my-data-pipeline`
@@ -730,8 +728,8 @@ See `guides/guide-maintenance.md` for complete standards.
 
 ## Quick Checklist
 
-- [ ] Claude Project instructions are 2-3 lines max?
-- [ ] Claude Project instructions point to Claude.md?
+- [ ] Claude Project instructions follow the BP#1 template (project name, folder, filesystem MCP, INDEX.md + Claude.md)?
+- [ ] Claude Project instructions use `filesystem` MCP tool explicitly?
 - [ ] `context.md` exists and contains generic project knowledge?
 - [ ] `Claude.md` starts with: "Read context.md first"?
 - [ ] `Claude.md` references `session-startup.md`?
@@ -760,6 +758,20 @@ Both follow these best practices.
 ---
 
 ## Changelog
+
+### Version 1.3 — BP#1 Template Updated + BP#11 Deduplication
+**Date:** 2026-05-29
+**Rationale:** BP#1 template was missing the `filesystem` MCP tool instruction and INDEX.md loading step, causing Claude to read files from its Linux container instead of the local machine. BP#11 duplicated the template from BP#1.
+
+**Changes:**
+- BP#1 template updated: added `Project folder` line, explicit `filesystem` MCP tool on both reads, INDEX.md loading as step 1, WHY comment, and exception for claude-knowledge itself
+- BP#11 template replaced by a reference to BP#1 (single source of truth, no duplication)
+- Quick Checklist updated to reflect new BP#1 template
+- Why section of BP#1 extended with two new bullet points
+
+**Benefit:** Claude now reliably uses the filesystem MCP tool at session start. No risk of reading from Linux container. Shared conventions loaded before project-specific setup. Single template to maintain.
+
+---
 
 ### Version 1.2 — Refined BP #11 & Added BP 11a & 11b: Project Naming & Portability Strategy
 **Date:** 2026-05-29  
