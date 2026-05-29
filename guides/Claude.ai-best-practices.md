@@ -19,6 +19,7 @@ The 15 principles in 60 seconds:
 13. Add Keywords to all files for discoverability
 14. Structure guides as: Quick Start → Full Details
 15. Best practices = foundation for audit and setup processes
+16. Every Markdown file with more than 2 `##` sections must have a TOC
 
 *For full details on each principle, see sections below.*
 
@@ -45,6 +46,7 @@ The 15 principles in 60 seconds:
   - [13. README.md for Human Navigation](#13-readmemd-for-human-navigation)
   - [14. Keywords for Discoverability](#14-keywords-for-discoverability)
   - [15. Structure: Quick Start + Deep Dive](#15-structure-quick-start--deep-dive)
+  - [16. Table des matières obligatoire](#16-table-des-matières-obligatoire)
 - [Guide Maintenance Standards](#guide-maintenance-standards)
 - [Quick Checklist](#quick-checklist)
 - [Examples](#examples)
@@ -706,6 +708,35 @@ No keywords...
 
 ---
 
+## 16. Table des matières obligatoire
+
+**Principle:** Every Markdown file with more than 2 first-level sections (`##`) must have a Table of Contents.
+
+### Rule
+
+- TOC title: `## Table des matières` (anchor: `#table-des-matières`)
+- Anchors follow **VS Code** generation rules (accents preserved, numbers included)
+- Every `##` section title must include a back-link: `[↑](#table-des-matières)`
+- TOC lists only first-level sections (`##`), not subsections (`###`)
+
+### Reference
+
+Full convention (anchor format, examples, audit criteria):
+`conventions/markdown-toc.md`
+
+### Why
+- Long files without TOC are hard to navigate in VS Code
+- Standardized TOC + back-links enable fast two-way navigation
+- Consistent across all project documentation
+
+### What Gets Audited
+- Any `.md` file with more than 2 `##` sections
+- Verify `## Table des matières` exists
+- Verify anchors match actual section titles
+- Verify all `##` titles carry `[↑](#table-des-matières)`
+
+---
+
 ## Guide Maintenance Standards
 
 All guides in the knowledge base (including this one) follow standardized maintenance rules:
@@ -743,6 +774,7 @@ See `guides/guide-maintenance.md` for complete standards.
 - [ ] `README.md` exists for human navigation?
 - [ ] `PROJECT.md` has Audit section?
 - [ ] All files have Keywords section?
+- [ ] Markdown files with more than 2 `##` sections have a TOC with correct anchors and back-links?
 - [ ] All guides follow Quick Start + Deep Dive structure?
 
 ---
@@ -758,6 +790,21 @@ Both follow these best practices.
 ---
 
 ## Changelog
+
+### Version 1.4 — BP#16 : Table des matières obligatoire
+**Date:** 2026-05-29
+**Rationale:** Standardiser la navigation dans les fichiers Markdown longs. Les fichiers sans TOC sont difficiles à naviguer dans VS Code.
+
+**Changes:**
+- Ajout de BP#16 : "Table des matières obligatoire" pour tout fichier avec plus de 2 sections `##`
+- Référence à `conventions/markdown-toc.md` pour le format détaillé (ancres VS Code, lien ↑, critères d'audit)
+- Quick Start mis à jour (point 16)
+- TOC mise à jour (entrée BP#16)
+- Quick Checklist mise à jour
+
+**Benefit:** Tous les fichiers Markdown longs sont navigables de façon cohérente. L'audit peut détecter automatiquement les fichiers non conformes.
+
+---
 
 ### Version 1.3 — BP#1 Template Updated + BP#11 Deduplication
 **Date:** 2026-05-29
