@@ -28,8 +28,10 @@ Technical and tooling conventions.
 | filesystem.md | Use `filesystem` for reads, `edit-file-lines` for writes, `node` for mechanical copy/replace ops (zero tokens) | filesystem, MCP, read, write, copy, node, regex, files |
 | sqlite.md | One statement per call, DELETE before INSERT, always verify after writes, update schema.sql after DDL | sqlite, MCP, SQL, database, schema, write, query |
 | commwise-layout.md | `max-height` is the only reliable way to constrain flex children overridden by CommWise `!important` rules | CommWise, flex, layout, max-height, viewport, CSS, override |
+| commwise-modals.md | Modal open/close requires both `dds-hidden` (display) and `visible` (opacity/visibility) + mandatory reflow between. Disabled buttons need ID-level CSS override. | CommWise, modal, overlay, dds-hidden, visible, disabled, button, CSS, trap |
 | claude-chrome-mcp.md | Use Claude in Chrome MCP for live DOM diagnostics and JS fix validation — eliminates layout guesswork | Chrome, MCP, browser, DOM, debug, javascript, inspect, layout |
 | claude-structured-reasoning.md | 8 core techniques for clearer thinking: thinking tags, step-by-step decomposition, chain-of-thought, roles, structure, adversarial framing, constraints, reference-based | thinking-tags, chain-of-thought, structured-reasoning, prompting, clarity, analysis, constraints |
+| indexeddb-file-protocol.md | IndexedDB replaces localStorage for `file://` HTML pages — Chrome blocks localStorage in file:// context; IndexedDB works reliably. Includes reusable async snippet and migration table. | IndexedDB, localStorage, file-protocol, browser-storage, persistence, patch, HTML |
 | markdown-toc.md | TOC obligatoire pour tout fichier MD avec plus de 2 sections `##` — format ancres VS Code, lien ↑, critères d'audit | markdown, TOC, table-des-matières, ancres, navigation, VS-Code |
 
 ---
