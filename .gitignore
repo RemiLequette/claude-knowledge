@@ -1,0 +1,6 @@
+tmp/
+*.bak
+tools/tests/sandbox/
+node_modules/
+.DS_Store
+Thumbs.db
