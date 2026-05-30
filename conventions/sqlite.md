@@ -1,5 +1,9 @@
 # SQLite MCP Convention
 
+## Quick Start
+
+Convention SQLite MCP — règles critiques pour les opérations en base de données. Charger pour tout travail avec SQLite : requêtes, écritures, DDL. Couvre l'ordre des statements, la vérification après write, et la mise à jour du schema.
+
 ## Tool
 `sqlite:execute_query` — MCP tool for all SQLite operations (read and write).
 
@@ -63,3 +67,24 @@ After any DDL (ALTER TABLE, CREATE TABLE, DROP TABLE, CREATE VIEW):
 
 ## Keywords
 sqlite, MCP, SQL, database, schema, write, query, conventions, DDL
+
+---
+
+## Index
+
+| Terme | Occurrences |
+|-------|-------------|
+
+---
+
+## Changelog
+
+### Version 1.0 - Creation
+**Date:** 2026-05-30
+**Raison:** Convention SQLite MCP — regles d'execution de requetes SQL.
+
+**Contenu initial :**
+- Une instruction par appel
+- Ordre DELETE avant INSERT
+- Verification apres chaque write
+- Mise a jour de schema.sql apres DDL

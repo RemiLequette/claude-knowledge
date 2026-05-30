@@ -1,5 +1,9 @@
 # Filesystem MCP Convention
 
+## Quick Start
+
+Convention pour les opérations sur fichiers locaux Windows. Charger pour tout travail avec des fichiers : lecture, écriture, copie, remplacement. Définit quel outil utiliser selon le type d'opération (filesystem / edit-file-lines / node).
+
 ## Rule
 - **Read operations** → use `filesystem` MCP
 - **Write operations** → use `edit-file-lines` MCP
@@ -114,3 +118,25 @@ Do not fall back to bash. Instead:
 
 ## Keywords
 filesystem, MCP, read, write, copy, node, regex, files, conventions
+
+---
+
+## Index
+
+| Terme | Occurrences |
+|-------|-------------|
+
+---
+
+## Changelog
+
+### Version 1.0 - Creation
+**Date:** 2026-05-30
+**Raison:** Convention filesystem MCP — regles de lecture/ecriture de fichiers locaux.
+
+**Contenu initial :**
+- Read : filesystem MCP
+- Write : edit-file-lines MCP
+- Operations mecaniques : node via commands MCP
+- Templates node valides
+- Garde-fous securite

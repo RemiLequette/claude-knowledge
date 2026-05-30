@@ -1,5 +1,11 @@
 # Claude Knowledge Base
 
+## Quick Start
+
+Navigation humaine pour le projet claude-knowledge.
+Point d'entrée pour les humains : liens vers les fichiers clés, architecture du projet, description.
+Pour un AI Assistant, lire Claude.md à la place.
+
 Welcome to your centralized knowledge repository for managing Claude projects systematically.
 
 ---
@@ -110,3 +116,29 @@ This repository works for:
 2. **Setup:** Use `guides/project-setup.md` to create a new project
 3. **Learn:** Read the best practices in `guides/Claude.ai-best-practices.md`
 4. **Audit:** Use `guides/audit-process.md` to audit a project
+
+---
+
+## Keywords
+readme, navigation, knowledge-base, human, quickstart, architecture, structure
+
+---
+
+## Index
+
+| Terme | Occurrences |
+|-------|-------------|
+
+---
+
+## Changelog
+
+### Version 1.0 - Creation
+**Date:** 2026-05-30
+**Raison:** Navigation humaine pour le projet claude-knowledge.
+
+**Contenu initial :**
+- Quick Navigation vers les fichiers cles
+- Architecture du projet (diagramme)
+- Structure des dossiers
+- Description du projet

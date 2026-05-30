@@ -2,6 +2,10 @@
 
 ## Quick Start
 
+Processus d'audit pour vérifier la conformité d'un projet à ses best practices.
+Utiliser sur demande explicite uniquement — pas automatique.
+Couvre : chargement des critères, identification des éléments, table d'audit, batches de déviations, rapport final.
+
 If you only need the essentials:
 
 1. Load the project's best practices guide (it's the source of truth)
@@ -467,3 +471,10 @@ Use the summary format from Step 7.
 
 ## Keywords
 audit, verification, conformance, process, methodology, neutral, best-practices, project, exhaustive, deviations, pragmatic
+
+---
+
+## Index
+
+| Terme | Occurrences |
+|-------|-------------|

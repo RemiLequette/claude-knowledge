@@ -1,5 +1,9 @@
 # CommWise Layout Constraints
 
+## Quick Start
+
+Convention layout spécifique CommWise — contraintes flex causées par les overrides `!important`. Charger uniquement pour les projets CommWise avec des problèmes de positionnement ou de viewport.
+
 ## The core problem
 
 CommWise platform overrides (STYLE 840) apply `!important` on flex properties of key containers:
@@ -43,3 +47,24 @@ Use the Claude in Chrome MCP to run diagnostics live — see `claude-chrome-mcp.
 
 ## Keywords
 CommWise, flex, layout, max-height, viewport, CSS, override, conventions
+
+---
+
+## Index
+
+| Terme | Occurrences |
+|-------|-------------|
+
+---
+
+## Changelog
+
+### Version 1.0 - Creation
+**Date:** 2026-05-30
+**Raison:** Convention layout CommWise — contraintes flex et solution max-height.
+
+**Contenu initial :**
+- Probleme : overrides !important CommWise sur flex
+- Ce qui ne fonctionne pas (height, minHeight, reflow)
+- Solution : max-height respecte flex-grow
+- Pattern de debug avec getBoundingClientRect

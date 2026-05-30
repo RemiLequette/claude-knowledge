@@ -87,6 +87,10 @@ WHY: Session memory interferes with objectivity. Audit needs clean context.
 
 ## Quick Start
 
+Guide étape par étape pour créer un nouveau projet Claude conforme aux best practices.
+Utiliser quand on initialise un nouveau projet : structure de dossiers, Claude.md, PROJECT.md, README.md, instructions Desktop.
+Une session dédiée par projet — ne pas mélanger setup et développement.
+
 ```
 1. Create project folder
 2. Set Claude Desktop instructions (minimal)
@@ -387,6 +391,13 @@ This process implements these best practices:
 - **#13** — README.md for Human Navigation
 
 See `guides/Claude.ai-best-practices.md` for all 15 practices.
+
+---
+
+## Index
+
+| Terme | Occurrences |
+|-------|-------------|
 
 ---
 

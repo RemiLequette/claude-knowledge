@@ -1,5 +1,11 @@
 # Session Startup Workflow
 
+## Quick Start
+
+Workflow obligatoire à exécuter en début de chaque session Claude, avant toute réponse.
+Couvre : lecture de Claude.md, chargement de INDEX.md, identification et chargement des conventions pertinentes.
+Ne pas sauter ce workflow — il garantit la cohérence entre les sessions.
+
 **Execute this workflow at the START of every new session before answering any request.**
 
 ## Steps (in order)
@@ -64,3 +70,24 @@ If this is a NEW project with no Claude.md, just load INDEX.md from the knowledg
 
 ## Keywords
 startup, initialization, session, workflow, conventions, procedure, entry-point
+
+---
+
+## Index
+
+| Terme | Occurrences |
+|-------|-------------|
+
+---
+
+## Changelog
+
+### Version 1.0 - Creation
+**Date:** 2026-05-30
+**Raison:** Workflow de demarrage de session — execute en debut de chaque session Claude.
+
+**Contenu initial :**
+- Step 1 : charger Claude.md
+- Step 2 : charger INDEX.md
+- Step 3 : charger les conventions pertinentes
+- Step 4 : repondre a la requete

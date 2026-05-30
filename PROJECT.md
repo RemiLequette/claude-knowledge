@@ -1,5 +1,11 @@
 # Claude Knowledge Base
 
+## Quick Start
+
+Métadonnées du projet claude-knowledge — description, structure, et point d'entrée pour l'audit.
+À lire par tout AI Assistant pour comprendre le projet avant de commencer.
+Ne contient pas les conventions ni les best practices — voir INDEX.md pour la navigation.
+
 ## Purpose
 Centralized knowledge repository shared across all Claude projects.
 Contains conventions, workflows, and best practices to ensure consistency.

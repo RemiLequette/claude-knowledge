@@ -1,5 +1,11 @@
 # Guide Maintenance Standards
 
+## Quick Start
+
+Standards de maintenance pour tous les guides de la knowledge base.
+Charger quand on modifie un guide (audit-process.md, Claude.ai-best-practices.md, project-setup-process.md).
+Deux règles obligatoires : mettre à jour la TOC et ajouter une entrée au Changelog.
+
 Maintenance rules for all guides in the knowledge base.
 
 ---
@@ -95,3 +101,20 @@ If a guide has outdated TOC but up-to-date Changelog (or vice versa), readers lo
 maintenance, guides, documentation, changelog, TOC, discoverability, traceability, standards, consistency
 
 ---
+
+## Index
+
+| Terme | Occurrences |
+|-------|-------------|
+
+---
+
+## Changelog
+
+### Version 1.0 - Creation
+**Date:** 2026-05-30
+**Raison:** Standards de maintenance pour tous les guides de la knowledge base.
+
+**Contenu initial :**
+- Rule 1 : mettre a jour la TOC
+- Rule 2 : mettre a jour le Changelog

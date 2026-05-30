@@ -1,5 +1,11 @@
 # Claude Knowledge Base
 
+## Quick Start
+
+Instructions Claude spécifiques au projet claude-knowledge.
+Charger en début de session : lit PROJECT.md (contexte générique) puis session-startup.md (setup Claude).
+Note : ce projet EST la knowledge base — le chargement de INDEX.md depuis lui-même est omis.
+
 **Read context:**
 C:\Users\RemiLequette\Development\projects\claude-knowledge\PROJECT.md
 

@@ -1,6 +1,8 @@
 # Structured Reasoning & Clear Thinking
 
-Techniques to instruct Claude for clearer, more deliberate thinking and reasoning.
+## Quick Start
+
+Techniques pour guider un AI Assistant vers un raisonnement plus délibéré et structuré. Charger quand une tâche requiert analyse complexe, prise de décision, ou vérification de qualité de réponse.
 
 ## Core Techniques
 
@@ -266,3 +268,23 @@ Then rewrite with fixes.
 
 ## Keywords
 structured-reasoning, thinking-tags, chain-of-thought, prompting, clarity, reasoning-patterns, analysis, decomposition, constraints, verification
+
+---
+
+## Index
+
+| Terme | Occurrences |
+|-------|-------------|
+
+---
+
+## Changelog
+
+### Version 1.0 - Creation
+**Date:** 2026-05-30
+**Raison:** Convention raisonnement structure — 8 techniques pour un thinking plus delibere.
+
+**Contenu initial :**
+- 8 techniques : thinking tags, decomposition, CoT, roles, structure, adversarial, contraintes, reference
+- Patterns avances : Think First, Error Check, Three Perspectives
+- Anti-patterns et indicateurs d'efficacite

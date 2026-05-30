@@ -1,5 +1,9 @@
 # IndexedDB vs localStorage in file:// HTML pages
 
+## Quick Start
+
+Remplacement de localStorage par IndexedDB pour les pages HTML ouvertes en `file://`. Charger uniquement pour des projets avec des fichiers HTML standalone non servis par un serveur.
+
 ## Problem
 
 `localStorage` is **blocked in Chrome when opening HTML files via `file://`** protocol. Chrome treats each `file://` URL as a unique security origin, making cross-page storage impossible and causing silent failures on same-page storage in some configurations.
@@ -54,3 +58,24 @@ async function idbDel(key) {
 
 ## Keywords
 indexedDB, localStorage, file-protocol, browser-storage, persistence, patch, HTML, AfrSCM
+
+---
+
+## Index
+
+| Terme | Occurrences |
+|-------|-------------|
+
+---
+
+## Changelog
+
+### Version 1.0 - Creation
+**Date:** 2026-05-30
+**Raison:** Convention IndexedDB pour pages HTML en file:// — localStorage bloque par Chrome.
+
+**Contenu initial :**
+- Probleme : localStorage bloque en file://
+- Solution : IndexedDB avec snippet reutilisable
+- Table de migration localStorage -> IndexedDB
+- Convention de nommage (projet AfrSCM)

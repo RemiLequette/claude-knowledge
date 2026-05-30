@@ -4,31 +4,32 @@ Rules for all Markdown files across all projects.
 
 ## Quick Start
 
-1. Titres : alphanumerique + accents + tirets uniquement — pas d'emoji ni ponctuation speciale
-2. Titres uniques dans le fichier — les doublons cassent les ancres
-3. Structure : Quick Start → Keywords → TOC → contenu → Index → Changelog
-4. TOC obligatoire si plus de 2 sections `##` de contenu — lien retour sous chaque titre
-5. Index en fin de fichier — termes avec ancres HTML et pointeurs numerotes
-6. Changelog apres l'Index
+Convention universelle pour tous les fichiers Markdown du projet — structure, titres, navigation, traçabilité.
+Charger quand on crée ou modifie un fichier Markdown, ou quand on audite la conformité documentaire d'un projet.
+Ne couvre pas le contenu métier des fichiers — uniquement leur forme et leur organisation.
+Voir [Indexation en base de données](#indexation-en-base-de-données) pour les implications sur la rédaction et les citations.
 
 ## Keywords
 documentation, markdown, titres, ancres, TOC, index, keywords, changelog, quick-start, convention, navigation, VS-Code
 
 ## Table des matieres
 
-1. [Titres](#titres)
+1. [Structure des sections](#structure-des-sections)
 2. [Langue](#langue)
 3. [Numerotation](#numerotation)
 4. [TOC](#toc)
 5. [Regle Keywords](#regle-keywords)
 6. [Regle Index](#regle-index)
 7. [Regle Changelog](#regle-changelog)
-8. [Regle Quick Start](#regle-quick-start)
+8. [Indexation en base de données](#indexation-en-base-de-données)
+9. [Regle Quick Start](#regle-quick-start)
 
 ---
 
-## Titres
+## Structure des sections
 [up](#table-des-matieres)
+
+### Titres
 
 Les titres servent de base aux ancres de navigation. Tout caractere non standard casse les ancres.
 
@@ -46,7 +47,7 @@ Les titres servent de base aux ancres de navigation. Tout caractere non standard
 
 **Unicite :** Chaque titre `##` doit etre unique dans le fichier — les doublons cassent les ancres.
 
-### Exemples
+#### Exemples
 
 | Incorrect | Correct |
 |-----------|---------|
@@ -54,6 +55,24 @@ Les titres servent de base aux ancres de navigation. Tout caractere non standard
 | `## Etape 1: Charger le contexte` | `## Etape 1 - Charger le contexte` |
 | `## ✅ Resultats` | `## Resultats` |
 | `## Balisage — contrat HTML↔scripts` | `## Balisage - contrat HTML et scripts` |
+
+---
+
+### Longueur et découpage
+
+Une section `##` doit couvrir un seul sujet, traitable en une lecture.
+
+Si une section nécessite plusieurs sous-thèmes distincts, la diviser en sections séparées. Une section trop longue est souvent le signe qu'elle couvre plusieurs sujets.
+
+Cette règle s'applique aussi à la lisibilité pour un AI Assistant : une section trop large augmente le coût de chargement sans améliorer la pertinence.
+
+---
+
+### Sous-sections
+
+Utiliser `###` pour structurer le contenu interne d'une section sans alourdir la TOC — les sous-sections n'y apparaissent pas.
+
+Si une `###` devient une cible de citation ou de navigation autonome, la promouvoir en `##`.
 
 ---
 
@@ -85,6 +104,19 @@ VS Code genere les ancres selon ces regles :
 | `## Scripts` | `#scripts` |
 | `## Gestion de lhistorique` | `#gestion-de-lhistorique` |
 | `## Etape 1 - Chargement` | `#etape-1---chargement` |
+| `## 1. Vue d'ensemble` | `#1-vue-densemble` |
+| `## 2. Balisage - contrat HTML et scripts` | `#2-balisage---contrat-html-et-scripts` |
+
+**Note :** GitHub utilise des règles différentes (les accents sont encodés en `%XX`). Cette convention cible VS Code uniquement.
+
+### Quand utiliser une TOC
+
+Une TOC est nécessaire quand le document ne gagne pas à être lu en une fois — soit parce qu'il est long, soit parce que le lecteur a besoin de naviguer vers une section spécifique (lisibilité, indexation).
+
+Pour être valide, une TOC doit :
+- Avoir le titre fixe `## Table des matieres`
+- Lister les sections `##` avec des ancres correspondant exactement aux titres réels
+- Être accompagnée de liens retour `[up]` sous chaque titre de section
 
 ### Format de la TOC
 
@@ -229,36 +261,66 @@ Si une autre langue est utilisee, elle doit etre declaree sous le titre du fichi
 ## Numerotation
 [up](#table-des-matieres)
 
-### Regle
+### Usage
 
-S'applique a tout systeme ou un numero devient un identifiant cite ailleurs (ex : BP#14, Rule 3).
-Ne s'applique pas aux etapes sequentielles ni aux versions de Changelog.
+Les numéros attribués à des items (BP#1, Rule 3, etc.) servent à deux usages :
+- **Navigation interne** — se repérer dans un document long
+- **Discussion** — permettre de référencer rapidement un point pendant un échange avec un humain
 
-### Principes
+Ce sont des outils contextuels, pas des identifiants stables.
 
-- **Stable** — un numero attribue ne change jamais, meme si le contenu est deplace, renomme ou fusionne
-- **Sequentiel a l'ajout** — on prend le prochain numero disponible
-- **Sans renumérotation** — si un item est supprime, son numero reste vacant. Les trous sont normaux et attendus
-- **Suffixes pour sous-items** — `11a`, `11b` acceptables pour des variantes d'un item parent, limites a un seul niveau
+### Règle
 
-### Registre obligatoire
+Ne jamais citer un item numéroté d'un autre document. Pour référencer une idée externe, citer le document ou une section par son titre.
 
-Tout document avec des items numerotes doit maintenir un registre en fin de document :
-
-```markdown
-## Registre des numeros
-
-| Numero | Titre | Statut |
-|--------|-------|--------|
-| 1 | Titre item 1 | Actif |
-| 2 | Titre item 2 | Actif |
-| 3 | Ancien item | Supprime 2026-05-30 |
-| 4 | Titre item 4 | Actif |
+**Correct ✅**
+```
+See guides/Claude.ai-best-practices.md
+See guides/Claude.ai-best-practices.md — Instruction Minimalism
 ```
 
-Le registre permet d'eviter les reutilisations accidentelles et de tracer l'historique.
+**Incorrect ❌**
+```
+Implements BP#1, BP#2, BP#8
+See Rule 3
+```
+
+### Pas de registre obligatoire
+
+Les numéros n'étant pas des identifiants inter-documents, aucun registre n'est requis.
 
 ---
+
+## Indexation en base de données
+[up](#table-des-matieres)
+
+Cette convention est conçue pour supporter une indexation future des fichiers Markdown dans une base de données documentaire, afin d'accélérer la découverte et le chargement par les AI Assistants.
+
+### Implications sur la rédaction
+
+- **Quick Start** — doit être suffisamment descriptif pour servir de résumé indexable. Un moteur de recherche s'appuie dessus pour qualifier la pertinence d'un document sans le charger entièrement.
+- **Keywords** — doivent couvrir les termes de recherche réels par lesquels on chercherait ce fichier.
+- **Citations inter-documents** — doivent pointer vers une cible identifiable dans la base. Les numéros (BP#1, Rule 3) ne sont pas des identifiants indexables.
+
+### Format des citations
+
+Utiliser des chemins relatifs depuis la racine du projet. Quatre formes de citation, combinables :
+
+```
+voir conventions/filesystem.md
+voir conventions/filesystem.md [section Optimal strategy by operation type]
+voir conventions/filesystem.md [keyword node]
+voir conventions/filesystem.md [index node-1]
+```
+
+| Forme | Syntaxe | Cible |
+|-------|---------|-------|
+| Document | `voir path/fichier.md` | Le fichier entier |
+| Section | `voir path/fichier.md [section Titre de section]` | Un titre `##` sans numéro |
+| Keyword | `voir path/fichier.md [keyword terme]` | Un terme dans `## Keywords` |
+| Index | `voir path/fichier.md [index terme-N]` | Une ancre `## Index` spécifique |
+
+**Règle :** ne jamais citer par numéro (`BP#1`, `Rule 3`) — les numéros sont des outils de navigation interne et de discussion, pas des identifiants indexables.
 
 ## Regle Quick Start
 [up](#table-des-matieres)
@@ -291,6 +353,7 @@ Combine avec `## Keywords`, il permet a un humain ou une IA de decider en quelqu
 - Pas un resume exhaustif du contenu
 - Pas une liste des sections (c'est le role de la TOC)
 - Pas un guide d'action etape par etape
+- Pas une enumeration chiffree du contenu ("X techniques", "Y principes") — ces nombres divergent avec le contenu reel et n'apportent aucune information utile au lecteur
 
 ### Placement
 
@@ -319,6 +382,54 @@ Juste apres le titre `#` et la description courte, avant `## Keywords`.
 ---
 
 ## Changelog
+
+### Version 2.6 - Structure des sections
+**Date:** 2026-05-30
+**Raison:** Regrouper les règles sur les titres, la longueur et les sous-sections dans une section dédiée. Rendre la convention plus navigable et cohérente.
+
+**Modifications :**
+- `## Titres` renommée `## Structure des sections`
+- Contenu titres déplacé en `### Titres` (sous-section)
+- Ajout `### Longueur et découpage` : une section = un sujet, traitable en une lecture
+- Ajout `### Sous-sections` : usage de `###`, promotion en `##` si citable
+- TOC mise à jour
+
+### Version 2.5 - Fusion markdown-toc.md
+**Date:** 2026-05-30
+**Raison:** `markdown-toc.md` couvrait partiellement le même périmètre avec des contenus distincts et une contradiction (lien retour dans le titre vs après). Fusion dans cette convention, suppression de `markdown-toc.md`.
+
+**Modifications :**
+- Ajout d'exemples d'ancres avec titres numérotés dans le tableau `## TOC`
+- Ajout note GitHub vs VS Code (règles d'ancres différentes)
+- Remplacement du critère d'audit mécanique par une règle de jugement : TOC nécessaire quand le document ne gagne pas à être lu en une fois
+- Rappels de validité TOC (titre fixe, ancres correctes, liens retour)
+- Suppression de `markdown-toc.md` et retrait de `INDEX.md`
+
+### Version 2.4 - Indexation en base de données et citations typées
+**Date:** 2026-05-30
+**Raison:** Préparer la convention pour une indexation future en base de données documentaire. Formaliser le format des citations inter-documents avec quatre formes typées.
+
+**Modifications :**
+- Ajout de la section `## Indexation en base de données` : implications sur Quick Start, Keywords, citations
+- Format de citation structuré : Document, Section, Keyword, Index — avec chemins relatifs
+- Règle explicite : ne jamais citer par numéro (BP#1, Rule 3)
+- Quick Start mis à jour avec lien vers la nouvelle section
+- TOC mise à jour
+
+### Version 2.3 - Numerotation reformulee - Quick Start corrige
+**Date:** 2026-05-30
+**Raison:** La numérotation était définie comme un identifiant stable inter-documents, ce qui créait un problème de citations fragiles. Reformulation : les numéros sont des outils contextuels (navigation interne + discussion). Suppression du registre obligatoire. Quick Start du fichier corrigé pour être conforme à sa propre règle.
+
+**Modifications :**
+- Section `## Numerotation` reformulée : usage (navigation + discussion), règle (ne pas citer entre documents), suppression du registre obligatoire
+- Quick Start remplacé : liste mécanique -> résumé d'orientation (thème, portée, conditions)
+
+### Version 2.2 - Quick Start - interdiction des enumerations chiffrees
+**Date:** 2026-05-30
+**Raison:** Les enumerations chiffrees dans le Quick Start ("X techniques", "Y principes") divergent avec le contenu reel et n'apportent aucune information utile.
+
+**Modifications :**
+- Ajout d'un point dans "Ce que le Quick Start n'est pas" : pas d'enumeration chiffree du contenu
 
 ### Version 2.0 - Ajout Index et reorganisation structure
 **Date:** 2026-05-30

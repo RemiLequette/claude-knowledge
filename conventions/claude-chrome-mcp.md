@@ -1,5 +1,9 @@
 # Claude in Chrome MCP
 
+## Quick Start
+
+Convention pour le diagnostic DOM et la validation de fixes JS en live via Chrome. Charger quand un bug visuel est difficile à diagnostiquer depuis le code seul, ou pour tester un fix avant de l'écrire.
+
 ## What it is
 
 The `Claude in Chrome` MCP connector gives Claude direct access to a live Chrome browser via a Chrome extension. It enables DOM inspection, JavaScript execution, and visual debugging without the developer opening DevTools manually.
@@ -64,3 +68,24 @@ Live JS execution eliminates guesswork on layout bugs. A diagnostic that would t
 
 ## Keywords
 Chrome, MCP, browser, DOM, debug, javascript, inspect, layout, conventions
+
+---
+
+## Index
+
+| Terme | Occurrences |
+|-------|-------------|
+
+---
+
+## Changelog
+
+### Version 1.0 - Creation
+**Date:** 2026-05-30
+**Raison:** Convention Claude in Chrome MCP — diagnostic DOM et validation de fixes JS en live.
+
+**Contenu initial :**
+- Workflow de connexion au browser
+- Contraintes (navigation bloquee, getEventListeners indisponible)
+- Patterns de diagnostic JS
+- Valeur : elimine les allers-retours de diagnostic

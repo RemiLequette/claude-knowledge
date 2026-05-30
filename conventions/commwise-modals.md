@@ -1,6 +1,10 @@
 # CommWise Modal & Button Traps
 
-## Trap 1 — Modal open/close pattern
+## Quick Start
+
+Convention modales et boutons CommWise — pièges CSS récurrents. Charger uniquement pour les projets CommWise manipulant des overlays ou des boutons disabled.
+
+## Trap 1 - Modal open/close pattern
 
 ### The problem
 
@@ -81,3 +85,22 @@ Apply this pattern to every new nav or toolbar button that can be in a disabled 
 
 ## Keywords
 CommWise, modal, overlay, dds-hidden, visible, display, opacity, visibility, disabled, button, CSS, override, trap
+
+---
+
+## Index
+
+| Terme | Occurrences |
+|-------|-------------|
+
+---
+
+## Changelog
+
+### Version 1.0 - Creation
+**Date:** 2026-05-30
+**Raison:** Convention modales CommWise — pieges CSS et patterns corrects.
+
+**Contenu initial :**
+- Trap 1 : pattern open/close modal (dds-hidden + visible + reflow)
+- Trap 2 : boutons disabled invisibles (override par ID requis)

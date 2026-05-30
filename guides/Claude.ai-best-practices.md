@@ -2,6 +2,10 @@
 
 ## Quick Start
 
+Référence des best practices pour structurer les projets Claude — source de vérité pour les audits et les setups.
+Charger quand on audite un projet, crée un nouveau projet, ou vérifie la conformité d'un élément.
+Couvre : instructions, structure de fichiers, conventions, nommage, documentation, audit, README.
+
 The 15 principles in 60 seconds:
 
 1. Keep instructions minimal (2-3 lines)
@@ -798,3 +802,10 @@ Initial version documenting the 15 core design principles for structuring Claude
 
 ## Keywords
 best-practices, project-structure, instructions, conventions, context, separation-of-concerns, clarity, audit, discoverability, README, documentation, navigation, keywords
+
+---
+
+## Index
+
+| Terme | Occurrences |
+|-------|-------------|
